@@ -1,4 +1,5 @@
 import spock.lang.Specification
+import spock.lang.Unroll
 
 import static org.junit.Assert.assertNull
 
@@ -44,11 +45,14 @@ class TrendCalculatorSpec extends Specification {
         assert 0.0 == result
     }
 
-    def "given a pair of values (p1, p2) when p1 is non-zero and p2 different then return (p2-p1)/p1"() {
-        when:
-        def result = TrendCalculator.calcTrend([1.0, 3.0])
+    def "given a pair of values (p1, p2) when p1 is non-zero and p2 different then return (p2-p1)/p1"(p1, p2, result) {
+        expect:
+        result == TrendCalculator.calcTrend([p1, p2])
 
-        then:
-        assert 2.0 == result
+        where:
+        p1  | p2  | result
+        1.0 | 3.0 | 2.0
+        1.0 | 0.0 | -1.0
+        2.2 | 4.5 | 1.045
     }
 }
