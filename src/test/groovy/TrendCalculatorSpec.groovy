@@ -11,4 +11,12 @@ class TrendCalculatorSpec extends Specification {
         then:
         assertNull(result)
     }
+
+    def "when the value list is empty then return null"() {
+        when:
+        def result = TrendCalculator.calcTrend([])
+
+        then:
+        assertNull(result)
+    }
 }
