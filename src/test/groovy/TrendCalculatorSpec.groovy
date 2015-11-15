@@ -63,4 +63,12 @@ class TrendCalculatorSpec extends Specification {
         then:
         assert 1.0 == result
     }
+
+    def "when there is an odd number of values then trend is calculated"() {
+        when:
+        def result = TrendCalculator.calcTrend([1.0, 3.0, 1.0])
+
+        then:
+        assert 2.0 == result
+    }
 }
