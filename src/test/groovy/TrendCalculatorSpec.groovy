@@ -55,4 +55,12 @@ class TrendCalculatorSpec extends Specification {
         1.0 | 0.0 | -1.0
         2.2 | 4.5 | 1.045
     }
+
+    def "when there are two pairs of values the trend is calculated"() {
+        when:
+        def result = TrendCalculator.calcTrend([1.0, 3.0, 1.0, 0.0])
+
+        then:
+        assert 1.0 == result
+    }
 }
