@@ -9,7 +9,6 @@ class TrendCalculator {
             return 0
         }
 
-        1.0
-
+        values[0] == values[1] ? 0.0 : 1.0
     }
 }
