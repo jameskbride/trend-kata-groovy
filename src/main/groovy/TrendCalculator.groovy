@@ -9,6 +9,12 @@ class TrendCalculator {
             return 0
         }
 
-        values[0] == values[1] ? 0.0 : 1.0
+        if (values[0] == values[1]) {
+            return 0
+        } else if (values[0] == 0 && values[1] > 0) {
+            return 1.0
+        }
+
+        return (values[1] - values[0]) / values[0]
     }
 }

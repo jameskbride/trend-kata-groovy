@@ -43,4 +43,12 @@ class TrendCalculatorSpec extends Specification {
         then:
         assert 0.0 == result
     }
+
+    def "given a pair of values (p1, p2) when p1 is non-zero and p2 different then return (p2-p1)/p1"() {
+        when:
+        def result = TrendCalculator.calcTrend([1.0, 3.0])
+
+        then:
+        assert 2.0 == result
+    }
 }
