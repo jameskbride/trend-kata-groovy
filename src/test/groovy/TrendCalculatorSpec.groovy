@@ -19,4 +19,12 @@ class TrendCalculatorSpec extends Specification {
         then:
         assertNull(result)
     }
+
+    def "when the list contains a single value then return zero"() {
+        when:
+        def result = TrendCalculator.calcTrend([0])
+
+        then:
+        assert 0 == result
+    }
 }
