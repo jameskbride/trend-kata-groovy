@@ -1,10 +1,15 @@
 class TrendCalculator {
 
     static def calcTrend(values) {
-        if (values) {
+        if (!values) {
+            return null
+        }
+
+        if (values && values.size() == 1) {
             return 0
         }
 
-        null
+        1.0
+
     }
 }
