@@ -5,7 +5,7 @@ class TrendCalculator {
             return null
         }
 
-        def pairs = values.collate(2, 2)
+        def pairs = values.collate(2)
 
         mapReducePairs(pairs)
     }
