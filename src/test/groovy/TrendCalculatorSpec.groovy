@@ -79,4 +79,12 @@ class TrendCalculatorSpec extends Specification {
         then:
         assert 5.5 == result
     }
+
+    def "when there are an odd number of values greater than 4 then the trend is calculated"() {
+        when:
+        def result = TrendCalculator.calcTrend([1.0, 3.0, 1.0, 0.0, 2.2])
+
+        then:
+        assert 1.0 == result
+    }
 }
